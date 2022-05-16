@@ -114,26 +114,35 @@ void PrintReverseString(const string& str, ostream& output){
 // You may change the parameters of these functions
 size_t MinimumPosition( int array[], size_t size){
 
-   /*   if (size ==1){
-            return array[0];
+  if (size <= 1){
+      return 0;
+  }
+    int smallest = MinimumPosition(array+1, size - 1)+1; 
 
-        }
-        else {
-            if (array[size] >array[size-1]) {
-                size--;
-                return MinimumPosition( &array[size-1], size);
-            }
-            else {
-                size--;
-            }
+      if (array[0] < array[smallest]){
+          return 0;
+      }
+      else return smallest;
 
-        }
-*/
+  }
 
 
-	return 0;
-}
 void SelectionSort(int array[], size_t size){
+        int maxIndex = 0;
+        int temp, index;
 
+    for (index = maxIndex; index < size; index++){
+        if (array[index] > array[maxIndex]){
+        maxIndex = index;
+        }
+    }
+         temp = array[size-1];
+         array[size-1] = array[maxIndex];
+            array[maxIndex] = temp;
+
+        if (size > 1){
+             size--;
+            SelectionSort(array,size);
+            }
 
 }
