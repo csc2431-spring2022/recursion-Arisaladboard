@@ -98,7 +98,7 @@ unsigned long long int Fibonacci(unsigned int n){
 void PrintReverseString(const string& str, ostream& output){
 
 
-    
+
    if (str.length() <= 1){
        output <<str;
    }
